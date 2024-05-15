@@ -1,9 +1,6 @@
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable"
 import React, { useEffect, useState } from "react"
-import { userData } from "@/app/data"
-import { Sidebar } from "./sidebar"
 import { cn } from "@/lib/utils"
-import { Chat } from "./chat"
 
 interface ChatLayoutProps {
   defaultLayout?: number[] | undefined
@@ -17,7 +14,7 @@ export function ChatLayout({
   navCollapsedSize,
 }: ChatLayoutProps) {
   const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed)
-  const [selectedUser, setSelectedUser] = React.useState(userData[0])
+  //const [selectedUser, setSelectedUser] = React.useState(userData[0])
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -63,7 +60,7 @@ export function ChatLayout({
           isCollapsed && "min-w-[50px] transition-all duration-300 ease-in-out md:min-w-[70px]",
         )}
       >
-        <Sidebar
+        {/* <Sidebar
           isCollapsed={isCollapsed || isMobile}
           links={userData.map((user) => ({
             name: user.name,
@@ -72,11 +69,11 @@ export function ChatLayout({
             variant: selectedUser.name === user.name ? "grey" : "ghost",
           }))}
           isMobile={isMobile}
-        />
+        /> */}
       </ResizablePanel>
       <ResizableHandle withHandle />
       <ResizablePanel defaultSize={defaultLayout[1]} minSize={30}>
-        <Chat messages={selectedUser.messages} selectedUser={selectedUser} isMobile={isMobile} />
+        {/* <Chat messages={selectedUser.messages} selectedUser={selectedUser} isMobile={isMobile} /> */}
       </ResizablePanel>
     </ResizablePanelGroup>
   )
