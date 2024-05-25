@@ -18,7 +18,8 @@ interface SidebarProps {
   isMobile: boolean
 }
 
-export function Sidebar({ links, isCollapsed, isMobile }: SidebarProps) {
+// export function Sidebar({ links, isCollapsed, isMobile }: SidebarProps) {
+export function Sidebar({ links, isCollapsed }: SidebarProps) {
   return (
     <div
       data-collapsed={isCollapsed}
